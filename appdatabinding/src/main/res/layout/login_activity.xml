@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="loginViewHelper"
+            type="com.databinding.view.LoginViewHelper" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/account_hint"
+            android:text="@={loginViewHelper.name}" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/pwd_hint"
+            android:text="@={loginViewHelper.pwd}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="@{loginViewHelper.canLogin(loginViewHelper.name,loginViewHelper.pwd)}"
+            android:onClick="@{loginViewHelper::login}"
+            android:text="@string/login" />
+    </LinearLayout>
+</layout>

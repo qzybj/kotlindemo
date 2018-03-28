@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.databinding.model.User" />
+
+        <variable
+            name="userPresenter"
+            type="com.databinding.presenter.UserPresenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/user_info_view"
+            bind:user="@{user}"
+            bind:userPresenter="@{userPresenter}"/>
+    </LinearLayout>
+
+</layout>

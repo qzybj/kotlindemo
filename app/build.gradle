@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+    defaultConfig {
+        applicationId "com.brady.apptest"
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation project(':lib_java')
+    implementation project(':mylibrary')
+    Map<String, String> dependencies = rootProject.ext.dependencies
+    compile dependencies.appCompat
+    compile dependencies.cardView
+    compile dependencies.recyclerView
+
+    //test lib
+    compile dependencies.picasso
+    compile dependencies.circleImageView
+    compile dependencies.retrofit
+    compile dependencies.retrofitConverterGson
+    //compile dependencies.retrofitAdapterRxJava
+    //compile dependencies.rxAndroid
+
+    //private lib
+    compile dependencies.stetho
+    compile dependencies.stethookhttp
+    compile dependencies.rxjava
+    compile dependencies.rxAndroid2
+    compile dependencies.baseAdapterHelper
+    compile dependencies.baseRvAdapter
+    //custom
+    compile dependencies.coreframe
+    compile dependencies.libutil
+    testCompile dependencies.jUnit
+    testCompile dependencies.mockito
+    testCompile dependencies.robolectric
+
+}

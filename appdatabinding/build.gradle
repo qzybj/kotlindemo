@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+
+
+    defaultConfig {
+        applicationId "com.appdatabinding"
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    kapt {
+        generateStubs = true
+    }
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
+    Map<String, String> dependencies = rootProject.ext.dependencies
+    //system
+    compile dependencies.appCompat
+    compile dependencies.cardView
+    compile dependencies.recyclerView
+
+
+    //custom
+    compile dependencies.coreframe
+    compile dependencies.libutil
+
+    //private lib
+    compile dependencies.baseAdapterHelper
+
+    //test
+    testCompile dependencies.jUnit
+    testCompile dependencies.runner
+    androidTestCompile(dependencies.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //kotlin
+    compile dependencies.kotlin_stdlib_jdk7
+    kapt dependencies.kaptcompiler
+}
+repositories {
+    mavenCentral()
+}

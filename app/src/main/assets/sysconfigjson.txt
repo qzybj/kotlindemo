@@ -1,0 +1,240 @@
+{
+    "data": {
+        "yakas": [],
+        "rule": {
+            "port": "8080",
+            "memo": "ceshi",
+            "alipayPlatform": "CSC",
+            "receiptsDigits": "20",
+            "storeNo": "HZ01",
+            "id": 100027,
+            "jointCashier": "Y",
+            "ruleName": "测试1",
+            "returnModel": "2",
+            "acrossGzCashier": "Y",
+            "initialSeqno": "10000",
+            "prints": [
+                {
+                    "status": "Y",
+                    "posRule": "100027",
+                    "parkPrint": "Y",
+                    "topQrcode": "22121211",
+                    "class": "com.intime.pos.client.domain.rule.PosIniPrintDO",
+                    "code": "2",
+                    "bottomQrcode": "121221789",
+                    "seqnoPrint": "Y",
+                    "storeNo": "HZ01",
+                    "printModel": "1",
+                    "printAmount": "2",
+                    "printController": "Y",
+                    "name": "xsxp1",
+                    "topQrcodeIsUsed": "Y",
+                    "botttomMemo": "swqd@@@assaj",
+                    "bottomQrcodeIsUsed": "Y"
+                },
+                {
+                    "status": "Y",
+                    "posRule": "100027",
+                    "parkPrint": "Y",
+                    "topQrcode": "22121211",
+                    "class": "com.intime.pos.client.domain.rule.PosIniPrintDO",
+                    "code": "1",
+                    "bottomQrcode": "121221789",
+                    "seqnoPrint": "Y",
+                    "storeNo": "HZ01",
+                    "printModel": "1",
+                    "printAmount": "2",
+                    "printController": "Y",
+                    "name": "thxp",
+                    "topQrcodeIsUsed": "Y",
+                    "botttomMemo": "swqd@@@assaj",
+                    "bottomQrcodeIsUsed": "Y"
+                }
+            ],
+            "dailyCriticalPoint": "1",
+            "posRule": "100027",
+            "jointCashierXp": "001|HZ01|wld@@@002|HZ10|cxd",
+            "class": "com.intime.pos.client.domain.rule.PosRuleDTO",
+            "bankPlatform": "ABC",
+            "payway": "Y",
+            "decimalPlaces": "2",
+            "ip": "192.168.23.20",
+            "countersInvoice": "Y",
+            "company": "csmd",
+            "profitLossType": "1",
+            "payways": [
+                {
+                    "id": 6,
+                    "open": false,
+                    "keyword": "BANK",
+                    "name": "银行卡",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 7,
+                    "open": false,
+                    "keyword": "WECHAT",
+                    "name": "微信支付",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 5,
+                    "open": false,
+                    "keyword": "ALIPAY",
+                    "name": "支付宝支付",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 8,
+                    "open": false,
+                    "keyword": "HISPOINT",
+                    "name": "历史积分支付",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 9,
+                    "open": false,
+                    "keyword": "CHANNEL",
+                    "name": "渠道折扣",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 11,
+                    "open": false,
+                    "keyword": "MTAO",
+                    "name": "手淘支付",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 12,
+                    "open": false,
+                    "keyword": "MJ",
+                    "name": "喵街付",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 16,
+                    "open": false,
+                    "keyword": "365",
+                    "name": "INTIME365",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 18,
+                    "open": false,
+                    "keyword": "ICARD",
+                    "name": "银泰卡余额",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 20,
+                    "open": false,
+                    "keyword": "CASH",
+                    "name": "现金",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 21,
+                    "open": false,
+                    "keyword": "CARD",
+                    "name": "预付费卡",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 25,
+                    "open": true,
+                    "keyword": "MANJIAN",
+                    "name": "满减",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 1,
+                    "open": true,
+                    "keyword": "T-COUPON",
+                    "name": "赠券",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 2,
+                    "open": false,
+                    "keyword": "T-CASH",
+                    "name": "现金券",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 3,
+                    "open": false,
+                    "keyword": "T-YAKA",
+                    "name": "压卡",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 4,
+                    "open": false,
+                    "keyword": "ALPAY_L",
+                    "name": "支付宝支付(银联)",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                },
+                {
+                    "id": 26,
+                    "open": false,
+                    "keyword": "NON-FULL",
+                    "name": "非全单消费",
+                    "class": "com.intime.pos.client.domain.dict.PosPaywayDTO"
+                }
+            ],
+            "dataUpload": "Y",
+            "storeCode": "010"
+        },
+        "class": "com.intime.pos.client.VO.PosRuleResultVO",
+        "api": [
+            {
+                "id": 12,
+                "interfaceName": "123",
+                "backUrl": "12.12.12:8081",
+                "class": "com.intime.pos.client.domain.rule.PosInterfaceUrlDO",
+                "interfaceKey": "123",
+                "url": "10.10.10:8080"
+            },
+            {
+                "id": 13,
+                "interfaceName": "126",
+                "backUrl": "12.12.12:8088",
+                "class": "com.intime.pos.client.domain.rule.PosInterfaceUrlDO",
+                "interfaceKey": "123",
+                "url": "11.11.16:8080"
+            },
+            {
+                "id": 101,
+                "interfaceName": "测试",
+                "backUrl": "112.122.312.33:1231",
+                "class": "com.intime.pos.client.domain.rule.PosInterfaceUrlDO",
+                "interfaceKey": "112",
+                "url": "11.11.13:8888"
+            }
+        ],
+        "pos": {
+            "alipayNo": "456",
+            "deptName": "大青蛙",
+            "sn": "1234567",
+            "floorName": "1F",
+            "storeName": "杭州武林店",
+            "status": "S",
+            "posRule": "100027",
+            "class": "com.intime.pos.client.domain.rule.PosInfoListDO",
+            "ip": "192.168.12.21",
+            "storeNo": "HZ01",
+            "counterId": "001011",
+            "floor": "001",
+            "wechatNo": "789",
+            "posNo": "001",
+            "dept": "00101",
+            "posId": 1001,
+            "miaojieNo": "123",
+            "counterEnName": "策划书",
+            "counterName": "测试"
+        }
+    },
+    "errmsg": "收银机规则",
+    "errcode": "00"
+}

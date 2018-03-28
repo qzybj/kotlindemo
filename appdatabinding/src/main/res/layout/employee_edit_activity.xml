@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="employee"
+            type="com.databinding.model.Employee" />
+
+        <variable
+            name="employeePresenter"
+            type="com.databinding.presenter.EmployeePresenter" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="输入 First Name"
+            android:text="@={employee.firstName}" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="输入 Last Name"
+            android:text="@={employee.lastName}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="@{employeePresenter.canSave(employee)}"
+            android:onClick="@{employeePresenter::save}"
+            android:text="@string/login" />
+    </LinearLayout>
+</layout>

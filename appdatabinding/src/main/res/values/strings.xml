@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">appdatabinding</string>
+    <string name="account_hint">请输入账户名</string>
+    <string name="pwd_hint">请输入密码</string>
+    <string name="login">登录</string>
+    <string name="input_name">input name</string>
+    <string name="input_address">input address</string>
+</resources>

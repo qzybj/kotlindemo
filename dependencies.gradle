@@ -1,0 +1,46 @@
+ext {
+    supportLibraryVersion = '25.3.1'
+    retrofitVersion = '2.1.0'
+    kotlin_version = ext.kotlin_version
+
+    dependencies = [
+            //system
+            appCompat: "com.android.support:appcompat-v7:$supportLibraryVersion",
+            cardView: "com.android.support:cardview-v7:$supportLibraryVersion",
+            recyclerView: "com.android.support:recyclerview-v7:$supportLibraryVersion",
+
+            //kotlin
+            kaptcompiler: "com.android.databinding:compiler:2.3.0",
+            kotlin_stdlib_jdk7: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+
+            //open source project
+            retrofit: "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            retrofitConverterGson: "com.squareup.retrofit2:converter-gson:$retrofitVersion",
+            retrofitAdapterRxJava: "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion",
+            picasso: 'com.squareup.picasso:picasso:2.5.2',
+            rxAndroid: 'io.reactivex:rxandroid:1.2.1',
+            circleImageView: 'de.hdodenhof:circleimageview:1.3.0',
+
+            //test
+            jUnit: 'junit:junit:4.12',
+            mockito: 'org.mockito:mockito-core:1.10.19',
+            robolectric: 'org.robolectric:robolectric:3.0',
+            runner: 'com.android.support.test:runner:0.5',
+            espresso: 'com.android.support.test.espresso:espresso-core:2.2.2',
+
+            //private framework
+            stetho: 'com.facebook.stetho:stetho:1.1.0',
+            stethookhttp: 'com.facebook.stetho:stetho-okhttp:1.1.0',
+
+            rxjava: 'io.reactivex.rxjava2:rxjava:2.0.1',
+            rxAndroid2: 'io.reactivex.rxjava2:rxandroid:2.0.1',
+
+            //RecyclerAdapter框架
+            baseAdapterHelper: 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30',
+            baseRvAdapter:'com.zhy:base-rvadapter:3.0.2',
+
+            //custom frame
+            coreframe: 'com.github.qzybj:coreframe:1.2',
+            libutil: 'com.github.qzybj:libutil:0.4'
+    ]
+}

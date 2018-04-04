@@ -11,12 +11,12 @@ import java.util.Date;
  * @date 2018/3/21
  * @description 获取反射值
  */
-public class TestUtil1 {
+public class ClassFieldUtil {
 
     public static void prtFields(Class cls) {
         Field[] fields = cls.getClass().getDeclaredFields();//根据Class对象获得属性 私有的也可以获得
         for (Field f : fields) {
-            TestUtil.print(f.getType().getName() + f.getType());//打印每个属性的类型名字
+            SplitUtil.print(f.getType().getName() + f.getType());//打印每个属性的类型名字
         }
     }
 
@@ -29,7 +29,9 @@ public class TestUtil1 {
                     field[i].setAccessible(true);
                     try {
                         Object obj = field[i].get(model);
-                        values[i] = obj.toString();
+                        if(obj!=null){
+                            values[i] = obj.toString();
+                        }
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     }
@@ -73,42 +75,42 @@ public class TestUtil1 {
                     String value = (String) m.invoke(model);
                     if (value != null) {
 
-                        TestUtil.print("attribute value:" + value);
+                        SplitUtil.print("attribute value:" + value);
                     }
                 }
                 if (type.equals("class java.lang.Integer")||type.equals("int")) {
                     Method m = model.getClass().getMethod("get" + name);
                     Integer value = (Integer) m.invoke(model);
                     if (value != null) {
-                        TestUtil.print("attribute value:" + value);
+                        SplitUtil.print("attribute value:" + value);
                     }
                 }
                 if (type.equals("class java.lang.Short")) {
                     Method m = model.getClass().getMethod("get" + name);
                     Short value = (Short) m.invoke(model);
                     if (value != null) {
-                        TestUtil.print("attribute value:" + value);
+                        SplitUtil.print("attribute value:" + value);
                     }
                 }
                 if (type.equals("class java.lang.Double")) {
                     Method m = model.getClass().getMethod("get" + name);
                     Double value = (Double) m.invoke(model);
                     if (value != null) {
-                        TestUtil.print("attribute value:" + value);
+                        SplitUtil.print("attribute value:" + value);
                     }
                 }
                 if (type.equals("class java.lang.Boolean")||type.equals("boolean")) {
                     Method m = model.getClass().getMethod("get" + name);
                     Boolean value = (Boolean) m.invoke(model);
                     if (value != null) {
-                        TestUtil.print("attribute value:" + value);
+                        SplitUtil.print("attribute value:" + value);
                     }
                 }
                 if (type.equals("class java.util.Date")) {
                     Method m = model.getClass().getMethod("get" + name);
                     Date value = (Date) m.invoke(model);
                     if (value != null) {
-                        TestUtil.print("attribute value:"
+                        SplitUtil.print("attribute value:"
                                 + value.toLocaleString());
                     }
                 }

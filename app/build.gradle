@@ -33,6 +33,7 @@ dependencies {
     })
     implementation project(':lib_java')
     implementation project(':mylibrary')
+
     Map<String, String> dependencies = rootProject.ext.dependencies
     compile dependencies.appCompat
     compile dependencies.cardView

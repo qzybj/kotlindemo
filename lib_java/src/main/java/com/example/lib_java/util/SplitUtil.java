@@ -1,6 +1,5 @@
 package com.example.lib_java.util;
 
-import com.example.lib_java.config.SystemConfigConstant;
 import com.example.lib_java.config.UrlConfig;
 
 import java.util.ArrayList;
@@ -14,8 +13,11 @@ import java.util.Map;
  * @date 2018/1/30
  * @description
  */
-public class TestUtil {
+public class SplitUtil {
 
+    
+    public static final String STRING_DIVIDE_CHAR = "'";
+    public static final String STRING_DIVIDE_CHAR_REPLACE = "_";
 
     public static void testFix(){
         print("call testFix method!");
@@ -23,9 +25,15 @@ public class TestUtil {
 
     public static void print(String msg){
         if(StringUtil.isNotEmpty(msg)){
+            System.out.print(msg);
+        }
+    }
+    public static void printLn(String msg){
+        if(StringUtil.isNotEmpty(msg)){
             System.out.println(msg);
         }
     }
+
     /**
      * 截取小票号处理
      * @param receiptNo
@@ -54,9 +62,9 @@ public class TestUtil {
     public static String[] getSplit(String str,String regularExpression,int size) {
         if(StringUtil.isNotEmpty(str)
                 &&StringUtil.isNotEmpty(regularExpression)){
-            if(SystemConfigConstant.STRING_DIVIDE_CHAR.equals(regularExpression)){
-                str = str.replace(SystemConfigConstant.STRING_DIVIDE_CHAR, SystemConfigConstant.STRING_DIVIDE_CHAR_REPLACE);
-                regularExpression = SystemConfigConstant.STRING_DIVIDE_CHAR_REPLACE;
+            if(STRING_DIVIDE_CHAR.equals(regularExpression)){
+                str = str.replace(STRING_DIVIDE_CHAR, STRING_DIVIDE_CHAR_REPLACE);
+                regularExpression = STRING_DIVIDE_CHAR_REPLACE;
             }
             String[] split = str.split(regularExpression);
             if(!CListUtil.isEmpty(split)){
@@ -107,7 +115,7 @@ public class TestUtil {
      */
     private static void cutReceiptNo() {
         String tmp = "0123456789x";
-        System.out.println(TestUtil.cutReceiptNo(tmp));
+        System.out.println(SplitUtil.cutReceiptNo(tmp));
         String code = "E11";
         System.out.println(code.substring(0,2));
         System.out.println(code.substring(2));
@@ -119,7 +127,7 @@ public class TestUtil {
     private static void testSplit() {
         String storeNos ="HZ01,HZ02,HZ03,HZ10";
         String storeNo ="HZ08";
-        ArrayList<String> list = CListUtil.toList(TestUtil.getSplit(storeNos, ",", -1));
+        ArrayList<String> list = CListUtil.toList(SplitUtil.getSplit(storeNos, ",", -1));
         if (!CListUtil.isEmpty(list)) {
             if(list.contains(storeNo)){
                 System.out.println("include "+storeNo);
